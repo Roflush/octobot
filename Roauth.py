@@ -10,7 +10,6 @@ from discord.ext import commands
 
 token = open("token.txt", "r").read()
 
-
 ''' 
     python 3.7 or greater
     Discordpy 1.3 or greater 
@@ -18,7 +17,7 @@ token = open("token.txt", "r").read()
 '''
 # Change the prefix below, and description to whatever you want.. 
 
-bot = commands.Bot(command_prefix='ro.', description="This is a Authbot, without all the bullshit the others carry.")
+bot = commands.Bot(command_prefix='ro.', description="This is a octobot, without all the bullshit the others carry.")
 
 @bot.event # What you see in the cli.. 
 async def on_ready():
@@ -64,7 +63,6 @@ async def choose(ctx, *choices: str):
     """Chooses between multiple choices."""
     await ctx.send(random.choice(choices))
 
-
 @bot.command(pass_context=True)
 @commands.has_permissions(administrator=True)
 async def clean(ctx, limit: int):
@@ -76,8 +74,6 @@ async def clean(ctx, limit: int):
 async def clear_error(ctx, error):
     if isinstance(error, commands.MissingPermissions):
         await ctx.send("You cant do that!")
-
-
 
 @bot.command()
 async def repeat(ctx, times: int, content='repeating...'):
@@ -111,7 +107,7 @@ async def _ryan(ctx):
 @bot.command()
 async def github(ctx):
     '''Github url redir'''
-    await ctx.send('You can find the code at: %URL%')
+    await ctx.send('You can find the code at: https://github.com/Roflush/octobot')
 
 @cool.command(name='ghost')
 async def _ghost(ctx):
