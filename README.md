@@ -2,7 +2,7 @@
 Octobot is aimed at taking a simple route to user auth, and just a general approach to discord bots. This project is also aimed at readability. 
 
 ## Requirements 
-*Python 3.7 or greater*
+*Python 3.7 or greater,*
 *Discordpy 1.2.5 or greater* 
 
 
@@ -11,13 +11,13 @@ Octobot is aimed at taking a simple route to user auth, and just a general appro
 
 1. Addition, Subtraction, Multiplication, and Division. 
 
-	1. When using any of these commands it's impaortant to use them like: ro.add 4 4.
+	1. When using any of these commands it's important to use them like: ro.add 4 4.
 
 1. Roll 
 	1. The roll comand rolls a dice in NdN format.
 
 1. choose
-	1. Chooses two choices that the user gave it. 
+	1. Chooses one of two choices that the user gave it. 
 
 1.	clean 
 	1. Cleans a text chat of trash.
@@ -39,9 +39,9 @@ Octobot is aimed at taking a simple route to user auth, and just a general appro
 
 ## to do
 
-- [] add error handling for all the commands.
-- [] add more commands. 
-- [] add user auth.
+- [ ] add error handling for all the commands.
+- [ ] add more commands. 
+- [ ] add user auth.
 - [x] drink coffee.
 
 

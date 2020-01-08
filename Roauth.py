@@ -58,12 +58,12 @@ async def roll(ctx, dice: str):
     result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
     await ctx.send(result)
 
-@bot.command(description='For when you wanna settle the score some other way')
+@bot.command(description='For when you wanna settle the score some other way') # Chooses two choices. 
 async def choose(ctx, *choices: str):
     """Chooses between multiple choices."""
     await ctx.send(random.choice(choices))
 
-@bot.command(pass_context=True)
+@bot.command(pass_context=True) #deletes messages 
 @commands.has_permissions(administrator=True)
 async def clean(ctx, limit: int):
     """Cleans out a textchat of trash."""
@@ -75,18 +75,18 @@ async def clear_error(ctx, error):
     if isinstance(error, commands.MissingPermissions):
         await ctx.send("You cant do that!")
 
-@bot.command()
+@bot.command() # Repeats words.
 async def repeat(ctx, times: int, content='repeating...'):
     """Repeats a message multiple times."""
     for i in range(times):
         await ctx.send(content)
 
-@bot.command()
+@bot.command() # puts a message if a user joins
 async def joined(ctx, member: discord.Member):
     """Says when a member joined."""
     await ctx.send('{0.name} joined in {0.joined_at}'.format(member))
 
-@bot.group()
+@bot.group() # makes a "Group" for the cool command. 
 async def cool(ctx):
     """Says if a user is cool.
     In reality this just checks if a subcommand is being invoked.
@@ -94,25 +94,24 @@ async def cool(ctx):
     if ctx.invoked_subcommand is None:
         await ctx.send('No, {0.subcommand_passed} is not cool'.format(ctx))
 
-@cool.command(name='bot')
+@cool.command(name='bot') # Adds a custom command for cool with the word "bot".
 async def _bot(ctx):
     """Is the bot cool?"""
     await ctx.send('Yes, the bot is cool.')
 
-@cool.command(name='ryan')
+@cool.command(name='ryan') # # Adds a custom command for cool with the word "ryan".
 async def _ryan(ctx):
     """Is ryan cool?"""
     await ctx.send('Yes, Ryan | Roflush is cool')
     
-@bot.command()
+@bot.command() # Adds github repo 
 async def github(ctx):
     '''Github url redir'''
     await ctx.send('You can find the code at: https://github.com/Roflush/octobot')
 
-@cool.command(name='ghost')
+@cool.command(name='ghost') # Adds a custom command for cool with the word "ghost".
 async def _ghost(ctx):
     '''Is ghost cool?'''
     await ctx.send('Yes he drinks hennessy')
-
 
 bot.run(token)
